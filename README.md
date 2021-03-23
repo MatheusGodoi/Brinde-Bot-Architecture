@@ -1,6 +1,7 @@
-# Corno-Bot-V2
+# Brinde-Bot-Architecture
 
-Discord bot called "Corno Bot", used in a personal discord server with our friends.
+Modular architecture for discord bots.<br>
+Allows for reloading, updating from a git repository, enabling and disabling cogs on the fly, and more.<br>
 
 # Table of Contents
 1. [Structure](#structure)

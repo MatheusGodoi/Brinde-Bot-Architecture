@@ -34,12 +34,12 @@ root
 This bot was made using Python 3.9, to fill our personal discord server.<br>
 Due to the amount of computer science students on our server, we decide to make the bot modular, in a way that is easy to anyone add your own functions on the bot.<br>
 
-The following architeture is:
+The following architeture is as follow:
 - **/**<br>
 `cogFile.txt` TXT file that stores all cogs names. This file is read on startup to load all cogs on the bot;<br>
 `main.py` Main module of the bot. Responsible for the startup and cog loading;<br>
 - **/src/**<br> 
-Folder for files used on the code. These include:<br>
+Folder for files used on the code. Can be used to store sound files, images, etc. By default we include:<br>
 `utils` Folder that have utils generic functions, to be imported on other cogs; Stores a empty *\_\_init\_\_.py* due to the nature of python imports;<br>
 - **/cogs/**<br>
 Folder to store all the user made cogs for the bot. This folder is read and loaded on startup; Stores a empty *\_\_init\_\_.py* due to the nature of python imports;<br>

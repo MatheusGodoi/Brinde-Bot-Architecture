@@ -38,6 +38,7 @@ The following architeture is as follow:
 - **/**<br>
 `cogFile.txt` TXT file that stores all cogs names. This file is read on startup to load all cogs on the bot;<br>
 `main.py` Main module of the bot. Responsible for the startup and cog loading;<br>
+`.env` Env file that is read to find a discord app token and a list of user id with admin acces for the AdminCog;<br>
 - **/src/**<br> 
 Folder for files used on the code. Can be used to store sound files, images, etc. By default we include:<br>
 `utils` Folder that have utils generic functions, to be imported on other cogs; Stores a empty *\_\_init\_\_.py* due to the nature of python imports;<br>

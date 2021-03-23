@@ -40,9 +40,9 @@ The following architeture is:
 `main.py` Main module of the bot. Responsible for the startup and cog loading;<br>
 - **/src/**<br> 
 Folder for files used on the code. These include:<br>
-`utils` Folder that have utils generic functions, to be imported on other cogs; Stores a empty *__init__.py* due to the nature of python imports;<br>
+`utils` Folder that have utils generic functions, to be imported on other cogs; Stores a empty *\_\_init\_\_.py* due to the nature of python imports;<br>
 - **/cogs/**<br>
-Folder to store all the user made cogs for the bot. This folder is read and loaded on startup; Stores a empty *__init__.py* due to the nature of python imports;<br>
+Folder to store all the user made cogs for the bot. This folder is read and loaded on startup; Stores a empty *\_\_init\_\_.py* due to the nature of python imports;<br>
 
 # Features
 

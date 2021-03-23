@@ -1,0 +1,52 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Source files
+src/ffmpeg/bin/*
+src/ffmpeg/presets/*
+src/ffmpeg/doc/*
+src/ffmpeg/LICENSE
+src/ffmpeg/README.txt
+src/sounds/*.mp3
+
+# Distribution / packaging
+.Python
+build/
+dist/
+downloads/
+lib/
+lib64/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+MANIFEST
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+
+# pyenv
+.python-version
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/

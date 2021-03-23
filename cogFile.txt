@@ -1,0 +1,20 @@
+################################################################################################ 
+# Cog List                                                                                     #
+#                                                                                              #
+# This file is used to read all cogs presents in the code, to be loaded on the bot             #
+# To load your cog here, put your cog code on /cogs/your_cog.py                                #
+# And add the filename here (without the .py)                                                  #
+# Done, the bot will load it in startup                                                        #
+# Any cog that starts with '!' are deactivated, so they will not be loaded                     #
+#                                                                                              #
+# Commented cog_example here because we dont use it, its just a template for new cogs (:       #
+#                                                                                              #
+# On this file, any line on this file that starts with '#' will be ignored                     #
+# If you add comments here, please, respect this template so you dont break our readers!       #
+# Dont leave empty lines here too! It will break our readers sadly. Use # instead to space     #
+#                                                                                              #
+# Failing to do so will probably mess up the cog loading/reloading/unloading functions ):      #
+################################################################################################
+#
+# cog_example
+admin

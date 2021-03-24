@@ -18,8 +18,8 @@ async def generateHelpEmbed(ctx, cogName, cogDescription, helpList, embedColor=0
     embed = discord.Embed(title="Help " + str(cogName), description=cogDescription, color=embedColor)
 
     # Sets the bot icon as embed image
-    discord.File("./src/img/botIcon.png", filename="image.png")
-    embed.set_image(url="attachment://image.png")
+    discord.File("./src/img/botIcon.png", filename="botIcon.png")
+    embed.set_image(url="attachment://botIcon.png")
 
     for commandName, commandDescription, commandUsage  in helpList:
         embed.add_field(name=commandName, value=commandDescription + "\n" + commandUsage, inline=False)

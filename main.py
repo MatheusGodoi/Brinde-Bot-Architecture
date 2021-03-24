@@ -30,8 +30,8 @@ async def help(ctx, cogName=None):
             await ctx.invoke(bot.get_command(cogName + "HelpCommand"))
             return
         else:
-            print("[CornoBot.helpMessage] Cog " + cogName + " help command not found\n")
-            await ctx.channel.send("Cog help not found!")
+            print("[CornoBot.helpMessage] Cog '" + cogName + "' help command not found\n")
+            await ctx.channel.send("Cog `" + cogName + "` help function not found!")
             return
 
     print("[CornoBot.helpMessage] Attempting to read all cogs")

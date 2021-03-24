@@ -48,17 +48,24 @@ Folder to store all the user made cogs for the bot. This folder is read and load
 # Features
 
 The features of the bot are:
-- Auto load cogs;<br>
-Provided everything was configured, any user added cog will be loaded on startup
-- Admin cog by default;<br>
-Users with access can reload, load or unload cogs without needing to shutdown the bot. You can even get updates directly from git
 - Modular cogs;<br>
 The bot structure allows for a very modular style, allowing for multiple cogs with different usages be created with ease
+- Auto load cogs;<br>
+Provided everything was configured, any user added cog will be loaded on startup
+- Admin powers;<br>
+Users with access can reload, load or unload cogs without needing to shutdown the bot. You can even get updates directly from git
 - Generic imports;<br>
 We want to make useful functions as generic as we can, to put it in our [utils](/src//utils/) folder, allowing multiple cogs to take advantage of that
 
-Current cogs:
+Current cogs and functions:
 - [CogExample](/cogs/cog_example.py): Template for new cogs<br>
+ExampleCommand: Logs some messages on the terminal. Just as example!
+
+- [Main](/cogs/main.py): Not a cog on itself, but the main bot code<br>
+Ping: Pong!<br>
+Echo: Makes the bot repeat something.<br>
+Help: The main help function on the bot. Everytime a .help is called, its this one. If a cog name is passed with the command, the bot will look for the respective cog help command and invoke it instead.<br>
+
 - [Admin](/cogs/admin.py): Admin related functions, mainly reloading cogs<br>
 ReloadAll: Tries to reload existent cogs, load new ones, deactivate the disabled cogs. Skips `git pull` as default, but can be run by passing any argument with the command<br>
 LoadCog: Tries to activate a cog and reload all cogs; Skips `git pull`;<br>
@@ -118,8 +125,7 @@ It will turn on, load all cogs and be ready for usage on discord server.
 # TO-DO:
 Future features planned for the bot<br>
 ```
-Ping - Pong
-Echo - Repeat a message
+Nothing planned... for now!
 ```
 
 # References

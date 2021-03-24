@@ -12,29 +12,43 @@ bot = commands.Bot(command_prefix='.')
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
 
-# CornoBot Class
-class CornoBot(commands.Cog):
+# BrindeBot Class
+class BrindeBot(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
 
 # Commands ############################################################################################################################################################
+# echo: Simple function to debug. Makes the bot repeat a message
+@bot.command(pass_context=True, name="echo")
+async def echo(ctx, message):
+    print("[BrindeBot.echo] Echoing " + message)
+    await ctx.channel.send(message) 
+    return
+
+# ping: pong
+@bot.command(pass_context=True, name="ping")
+async def ping(ctx):
+    print("[BrindeBot.ping] Ponging")
+    await ctx.channel.send("pong")
+    return
+
 # helpMessage: Default help message that shows all cogs and possible help functions
 @bot.command(pass_context=True, name="help", aliases=["hlep"])
 async def help(ctx, cogName=None):
     # First we check if we recieved a cog name on the command. If we did, we call the right cog help command
     if cogName != None:
-        print("[CornoBot.helpMessage] Calling right help command")
+        print("[BrindeBot.helpMessage] Calling right help command")
         if bot.get_command(cogName + "HelpCommand") != None:
-            print("[CornoBot.helpMessage] Sending cog embed help\n")
+            print("[BrindeBot.helpMessage] Sending cog embed help\n")
             await ctx.invoke(bot.get_command(cogName + "HelpCommand"))
             return
         else:
-            print("[CornoBot.helpMessage] Cog '" + cogName + "' help command not found\n")
+            print("[BrindeBot.helpMessage] Cog '" + cogName + "' help command not found\n")
             await ctx.channel.send("Cog `" + cogName + "` help function not found!")
             return
 
-    print("[CornoBot.helpMessage] Attempting to read all cogs")
+    print("[BrindeBot.helpMessage] Attempting to read all cogs")
     readCogs = cogManage.readCogFile()
 
     # Cleans the cog list everytime to prevent deactivated cogs from appearing
@@ -50,7 +64,7 @@ async def help(ctx, cogName=None):
     # Gets the emoji list
     cogEmoji = helpFunction.returnCustomEmojiList()
 
-    print("[CornoBot.helpMessage] Generating embed")
+    print("[BrindeBot.helpMessage] Generating embed")
 
     embed = discord.Embed(title="Corno Bot Help list", description="List of cogs that you can ask for more help", color=0x5DD5AE)
     for cog in cogList:
@@ -65,7 +79,7 @@ async def help(ctx, cogName=None):
 
     embed.set_footer(text="Do .help <cog name> to find out more!")
 
-    print("[CornoBot.helpMessage] Sending embed help\n")
+    print("[BrindeBot.helpMessage] Sending embed help\n")
     await ctx.channel.send(embed=embed, file=botIcon)
 
 
@@ -73,22 +87,22 @@ async def help(ctx, cogName=None):
 # on_ready: Runs when the bot starts
 @bot.event
 async def on_ready():
-    print("[CornoBot.on_ready] " + str(bot.user) + " connected!")
+    print("[BrindeBot.on_ready] " + str(bot.user) + " connected!")
     await loadCogs()
 
 # Functions ##########################################################################################################################################################
 # loadCogs: Reads all cogs from a txt and tries to load them
 async def loadCogs():
-    print("[CornoBot.on_ready] Loading cogs...\n")
+    print("[BrindeBot.on_ready] Loading cogs...\n")
 
     cogList = cogManage.readCogFile()
     for cog in cogList:
         # Ignore deactivated cogs
         if cog[0] == "!":
             continue
-        print("[CornoBot.on_ready] Loading " + cog)
+        print("[BrindeBot.on_ready] Loading " + cog)
         bot.load_extension("cogs." + cog)
-    print("\n[CornoBot.on_ready] " + "All set!\n\n")
+    print("\n[BrindeBot.on_ready] " + "All set!\n\n")
 
 # Bot Run
 bot.run(TOKEN)

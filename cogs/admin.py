@@ -209,6 +209,26 @@ class AdminCog(commands.Cog):
             print("[AdminCog.loadCog] Cog " + str(cogName) + " not found.\n")
         return
 
+    # adminHelpCommand: Help function to get all cog usages
+    @commands.command(pass_context=True)
+    async def adminHelpCommand(self, ctx):
+        print("[AdminCog.adminHelpCommand] Generating embed")
+        # If it is, we use the generic help function to generate a embed
+        # First we generate all needed fields
+        cogName = "admin"
+        cogDescription = "Admin tools to control bot cogs and updates"
+        cogEmbed = 0xeb4034
+        # List of commands from this cog
+        helpList = [
+            ("🔃 reload", "Reloads all cogs on the bot. Can do git pull if used with \"t\"", "`.reload` | `.rebuild` | `.reload t` | `.rebuild t`"),
+            ("⬇️ load", "Activates and load a single cog.", "`.load <cog name>` | `.activate <cog name>`" ),
+            ("⬆️ unload", "Deactivates and unloads a single cog." , "`.unload <cog name>` | `.deactivate <cog name>`"),
+            ]
+
+        print("[AdminCog.adminHelpCommand] Sending embed\n")
+        await helpFunction.generateHelpEmbed(ctx, cogName, cogDescription, helpList, cogEmbed)
+        return
+
 
 # Setup function for the cog
 def setup(bot):

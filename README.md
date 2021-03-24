@@ -66,6 +66,7 @@ Reload: Tries to deactivate a cog and reload all cogs; Skips `git pull`;<br>
 Current utils:
 - [Voice_Channel](/src/utils/voice_channel.py): Stores a "Connect" and "Disconnect" a voice channel function;<br> 
 - [CogFile_Manage](/src/utils/cogfile_manage.py): Holds utils functions to read and write from the CogFile;<br> 
+- [Help_Functipn](/src/utils/help_function.py): Generates a help embed message with given arguments, to make generic help functions easier;<br>
 
 ## Reloading
 
@@ -116,8 +117,6 @@ It will turn on, load all cogs and be ready for usage on discord server.
 # TO-DO:
 Future features planned for the bot<br>
 ```
-Utils
-Help - Make a way to work for all cogs
 Ping - Pong
 Echo - Repeat a message
 ```

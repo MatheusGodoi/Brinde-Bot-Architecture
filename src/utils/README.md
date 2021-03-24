@@ -16,3 +16,7 @@ The following utils are included by default:
 **writeCommentCogFile** Made to write the comment section in a cog file<br>
 **writeCogFile** Made to write a list of cogs in the cog file<br>
 **readCogFile** Made to read the cog file and return all cogs (even deactivated ones)<br>
+
+[help_function.py](/src/utils/help_function.py)
+**returnCustomEmojiList** Returns a list of cog names and emojis, to customize the general help command<br>
+**generateHelpEmbed** Uses cogName, cogDescription, a list of commands with (command_name, command_description, command_usage), and a optional embed color to generate a embed help message<br>

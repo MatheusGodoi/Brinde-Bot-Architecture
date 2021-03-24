@@ -3,6 +3,7 @@ import os
 import time
 from discord.ext import commands
 from discord.utils import get
+import src.utils.help_function as helpFunction
 
 # This Cog is just a template to create your own cog with your own functions, and add it into the bot!
 # First, we need to create a cog class:
@@ -43,6 +44,40 @@ class CogExample(commands.Cog):
         everytime, so if various commands use the same "example" command name, the first one will
         run, no matter how hard you try.\n
         """)
+
+    # cog_exampleHelpCommand: Help function to get all cog usages
+    # Important to have the EXACT cog name as the start of the function, as well as the same sufix HelpCommand, so we can find this command later
+    # This is why on the cog called "cog_example", the command is called "cog_exampleHelpCommand"
+    # This function with this exact name is called on `main.py` everytime a user runs the .help <cog name> command
+    @commands.command(pass_context=True)
+    async def cog_exampleHelpCommand(self, ctx):
+        print("[CogExample.cog_exampleHelpCommand] Generating embed")
+        # If it is, we use the generic help function to generate a embed
+        # First we generate all needed fields
+
+        # Again, super needed to have exact name
+        cogName = "cog_example"
+
+        # A brief description of this cog reason to exist
+        cogDescription = "Example functions and template for new cogs"
+
+        # A custom color for the embed (if you wish, can be left empty)
+        cogEmbed = 0x000000
+        # List of commands from this cog
+        # This list MUST follow the template (command_name, command_description, command_usage) to be parsed correctly
+        # A good pratice for the command_usage is to show some (but not all) of the aliases of the command
+        # If all aliases are for errors (for example, examlpe a alias for example command) they can be left off
+        # Another good thing to do is add a emoji for the function, so its easier to find and adds a bit of characteristic to it
+        # You can use unicode emojis or use a custom discord emoji there
+        helpList = [
+            ("📚 example", "Example command on the template cog.", "`.example` | `.exmp` | `.ex`"),
+            ]
+
+        # Finally, we call the helpFunction from utils to generate our embed message and send it in the end
+        print("[CogExample.cog_exampleHelpCommand] Sending embed\n")
+        await helpFunction.generateHelpEmbed(ctx, cogName, cogDescription, helpList, cogEmbed)
+        return
+
 
 # One observation that I want to make is that ALL cogs methods are ASYNCHRONOUS! This is because the discord API nature,
 # to prevent the bot from being locked in a command, all methods are async so the bot can handle various requests for various

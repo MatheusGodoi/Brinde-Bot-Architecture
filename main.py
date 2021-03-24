@@ -21,7 +21,7 @@ class BrindeBot(commands.Cog):
 # Commands ############################################################################################################################################################
 # echo: Simple function to debug. Makes the bot repeat a message
 @bot.command(pass_context=True, name="echo")
-async def echo(ctx, message):
+async def echo(ctx, message="Send me something to echo 👺"):
     print("[BrindeBot.echo] Echoing " + message)
     await ctx.channel.send(message) 
     return
@@ -30,8 +30,9 @@ async def echo(ctx, message):
 @bot.command(pass_context=True, name="ping")
 async def ping(ctx):
     print("[BrindeBot.ping] Ponging")
-    await ctx.channel.send("pong")
+    await ctx.channel.send("Pong 🏓")
     return
+
 
 # helpMessage: Default help message that shows all cogs and possible help functions
 @bot.command(pass_context=True, name="help", aliases=["hlep"])

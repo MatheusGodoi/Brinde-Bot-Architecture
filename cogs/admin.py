@@ -10,6 +10,7 @@ from discord.ext import commands
 from discord.utils import get
 from dotenv import load_dotenv
 import src.utils.cogfile_manage as cogManage
+import src.utils.help_function as helpFunction
 
 
 # Loads the ADMIN_LIST as enviroment variables, from our .env file on root folder
@@ -53,7 +54,7 @@ class AdminCog(commands.Cog):
             self.bot.unload_extension(module)
             print("[AdminCog.unloadExtension] Unloading " + str(module)) 
         except commands.ExtensionNotLoaded:
-            print("[AdminCog.unloadExtension] Cog " + str(module) + "not loaded") 
+            print("[AdminCog.unloadExtension] Cog " + str(module) + " not loaded") 
 
     # reloadAll: Tries to reload all cogs, pulling new ones from git.
     async def reloadAll(self, ctx, shouldPull):

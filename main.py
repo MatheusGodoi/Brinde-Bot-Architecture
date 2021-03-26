@@ -7,6 +7,8 @@ import src.utils.help_function as helpFunction
 
 # Set bot command prefix
 bot = commands.Bot(command_prefix='.')
+bot.remove_command('help')
+
 
 # Loads the DISCORD_TOKEN as enviroment variables, from our .env file
 load_dotenv()
@@ -67,7 +69,7 @@ async def help(ctx, cogName=None):
 
     print("[BrindeBot.helpMessage] Generating embed")
 
-    embed = discord.Embed(title="Corno Bot Help list", description="List of cogs that you can ask for more help", color=0x5DD5AE)
+    embed = discord.Embed(title="Brinde Bot Help list", description="List of cogs that you can ask for more help", color=0x5DD5AE)
     for cog in cogList:
         if cog in cogEmoji:
             embed.add_field(name=cogEmoji[cog] + " " + cog, value=cog.title() + " functions and usage\n", inline=False)

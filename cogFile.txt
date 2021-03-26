@@ -16,5 +16,5 @@
 # Failing to do so will probably mess up the cog loading/reloading/unloading functions ):      #
 ################################################################################################
 #
-# cog_example
+# ! cog_example
 admin

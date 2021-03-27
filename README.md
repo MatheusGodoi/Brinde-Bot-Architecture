@@ -105,11 +105,9 @@ This .txt is read on startup, and loads all cogs there. Remember to place the FI
 To run the bot you need:
 - Python 3.x
 - Discord python package<br>
-Can be downloaded with `python -m pip install -U discord.py` on windows
+Can be downloaded with `python3 -m pip install -U discord.py`
 - Dotenv python package<br>
-Can be download with `python -m pip install -U python-dotenv` on windows
-- PyNaCl python package<br>
-Can be downloaded with `python -m pip install pynacl` on windows
+Can be download with `python3 -m pip install -U python-dotenv`
 - .env file on root folder
 This file will hold your discord_token and admin_list credentials, in this structure:<br>
 ```

@@ -104,7 +104,7 @@ This .txt is read on startup, and loads all cogs there. Remember to place the FI
 
 To run the bot you need:
 - Python 3.x
-- PIP
+- PIP<br>
 Can be downloaded with `curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py` and then `python3 get-pip.py` or `python get-pip.py` on windows
 - Discord python package<br>
 Can be downloaded with `python3 -m pip install -U discord.py` or  `python -m pip install -U discord.py` on windows

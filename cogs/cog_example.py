@@ -14,7 +14,7 @@ class CogExample(commands.Cog):
         self.bot = bot
 
     # Functions ###########################################################################################################################################################
-    # Cogs methods, can be commands used on text chat, or just functios used only inside the cog, to run other commands
+    # Cogs functions, can be used only inside the cog, or to run other commands
     # This one is used by other functions. We can see this by the absence of the "@commands.command()" tag.
     # doSomething: Function that {description of this function purpose and usage}
     async def doSomething(self, ctx):
@@ -29,8 +29,8 @@ class CogExample(commands.Cog):
         """)
 
     # Commands Methods ####################################################################################################################################################
-    # This method is a command used by the bot. You can set the function name to be called (.example in this case)
-    # and a list of aliases, to account for different names, misstypes, etc.
+    # Cogs Methods, these are commands used by the bot. You can set the function name to be called (.example in this case)
+    # and a list of aliases, to account for different names, misstypes, etc on the @commands.command tag.
     # exampleCommand: Function that {description of this command purpose and usage}
     @commands.command(pass_context=True, name="example", aliases=["examlpe", "exmp", "ex", "exampleCommand"])
     async def exampleCommand(self, ctx):

@@ -67,7 +67,7 @@ Echo: Makes the bot repeat something.<br>
 Help: The main help function on the bot. Everytime a .help is called, its this one. If a cog name is passed with the command, the bot will look for the respective cog help command and invoke it instead.<br>
 
 - [Admin](/cogs/admin.py): Admin related functions, mainly reloading cogs<br>
-ReloadAll: Tries to reload existent cogs, load new ones, deactivate the disabled cogs. Skips `git pull` as default, but can be run by passing any argument with the command<br>
+ReloadAll: Tries to reload existent cogs, load new ones, deactivate the disabled cogs. Skips `git pull` as default, but can be run by passing a 't' as argument with the command<br>
 LoadCog: Tries to activate a cog and reload all cogs; Skips `git pull`;<br>
 Reload: Tries to deactivate a cog and reload all cogs; Skips `git pull`;<br>
 
@@ -82,12 +82,12 @@ If you have **admin rights** on the bot (not on discord server!) set by the *.en
 These are:
 - `loadCog`: Activates a single cog on the cogFile (if its deactivated) and reloads;
 - `unloadCog`: Deactivates a single cog on the cogFile (if its activated) and reloads;
-- `reloadAll`: Reads the entire cogFile, loads/reloads all active cogs and unloads all deactives cogs; Can be set to run `git pull` before reloading by passing any argument with the command, ignores by default;
+- `reloadAll`: Reads the entire cogFile, loads/reloads all active cogs and unloads all deactives cogs; Can be set to run `git pull` before reloading by passing a 't' as argument with the command, ignores by default;
 
 # Updating
 
 If you clone this bot into a git repository, and use one to add cogs/maintain the bot, you can use the [AdminCog](/cogs/admin.py) to pull changes directly from there, and reload.<br>
-Doing so is easy: Just create a new git repository, place this architecture there, and everytime something is added, you can run `.rebuild t` on the discord text channel<br>
+Doing so is easy: Just create a new git repository, place this architecture there, and everytime something is merged, you can run `.reload t` on the discord text channel<br>
 to force the bot into doing `git pull` and loading all cogs on the cogFile.txt.<br>
 
 # Adding new Cogs
@@ -98,7 +98,7 @@ To add a new cog, you need to:
 * After coding your own cog with your functions, add it to the [cogFile.txt](/cogFile.txt)<br>
 This .txt is read on startup, and loads all cogs there. Remember to place the FILENAME of your cog, without the .py extension;
 * Restart your bot. After the cogs where placed on the right folder and the name added on the txt file, you can restart the bot to make it reload all cogs, and test your commands;
-* Merge your changes. If everything works, merge/open a pull request on the repository so everyone can update the changes and use the same CornoBot version
+* Merge your changes. If everything works, merge/open a pull request on the repository so everyone can update the changes and use the same BrindeBot version
 
 # Usage
 

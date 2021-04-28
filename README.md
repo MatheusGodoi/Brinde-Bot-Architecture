@@ -81,12 +81,12 @@ Folder to store all the user made cogs for the bot. This folder is read and load
 
 To run the bot you need:
 - Python 3.x
+- PIP<br>
+Can be downloaded with `curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py` and then `python3 get-pip.py` or `python get-pip.py` on windows
 - Discord python package<br>
-Can be downloaded with `python -m pip install -U discord.py` on windows
+Can be downloaded with `python3 -m pip install -U discord.py` or  `python -m pip install -U discord.py` on windows
 - Dotenv python package<br>
-Can be download with `python -m pip install -U python-dotenv` on windows
-- PyNaCl python package<br>
-Can be downloaded with `python -m pip install pynacl` on windows
+Can be download with `python3 -m pip install -U python-dotenv` or `python -m pip install -U python-dotenv` on windows
 - .env file on root folder
 This file will hold your discord_token and admin_list credentials, in this structure:<br>
 ```

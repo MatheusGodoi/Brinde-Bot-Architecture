@@ -13,7 +13,7 @@ async def connect(botObj, ctx):
     channel = ctx.message.author.voice.channel
     voice = get(botObj.bot.voice_clients, guild=ctx.guild)
 
-    print("[Utils.Voice_channel.Leave] Connecting to a voice channel")
+    print("[Utils.Voice_channel.Connect] Connecting to a voice channel")
     if voice and voice.is_connected():
         await voice.disconnect()
         voice = await channel.connect()

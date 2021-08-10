@@ -40,9 +40,10 @@ Echo: Makes the bot repeat something.<br>
 Help: The main help function on the bot. Everytime a .help is called, its this one. If a cog name is passed with the command, the bot will look for the respective cog help command and invoke it instead.<br>
 
 - [Admin](/cogs/admin.py): Admin related functions, mainly reloading cogs<br>
-ReloadAll: Tries to reload existent cogs, load new ones, deactivate the disabled cogs. Skips `git pull` as default, but can be run by passing a 't' as argument with the command<br>
+ReloadCogs: Tries to reload existent cogs, load new ones, deactivate the disabled cogs. Skips `git pull` as default, but can be run by passing 't' as argument with the command<br>
 LoadCog: Tries to activate a cog and reload all cogs; Skips `git pull`;<br>
-Reload: Tries to deactivate a cog and reload all cogs; Skips `git pull`;<br>
+UnloadCog: Tries to deactivate a cog and reload all cogs; Skips `git pull`;<br>
+ReadCogs: Reads teh entire cogfile and sends as text;<br>
 
 Current utils:
 - [Voice_Channel](/src/utils/voice_channel.py): Stores a "Connect" and "Disconnect" a voice channel function;<br> 

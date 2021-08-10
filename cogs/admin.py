@@ -54,7 +54,7 @@ class AdminCog(commands.Cog):
             self.bot.unload_extension(module)
             print("[AdminCog.unloadExtension] Unloading " + str(module)) 
         except commands.ExtensionNotLoaded:
-            print("[AdminCog.unloadExtension] Cog " + str(module) + " not loaded") 
+            print("[AdminCog.unloadExtension] Cog " + str(module) + "not loaded") 
 
     # reloadAll: Tries to reload all cogs, pulling new ones from git.
     async def reloadAll(self, ctx, shouldPull):
@@ -210,6 +210,18 @@ class AdminCog(commands.Cog):
             print("[AdminCog.loadCog] Cog " + str(cogName) + " not found.\n")
         return
 
+    # sendCogfile: Reads the cog file and sends all its contents
+    @commands.command(pass_context=True, name="read", aliases=["raed", "readcogs"])
+    async def sendCogfile(self, ctx):
+        print("[AdminCog.sendCogfile] Attempting to read cogFile")
+        userPermission = await self.findPermission(ctx)
+        
+        if userPermission:
+            print("[AdminCog.sendCogfile] Reading cogFile")
+            cogList = cogManage.readCogFile()
+            await ctx.send(cogList)
+        return
+
     # adminHelpCommand: Help function to get all cog usages
     @commands.command(pass_context=True)
     async def adminHelpCommand(self, ctx):
@@ -224,12 +236,12 @@ class AdminCog(commands.Cog):
             ("🔃 reload", "Reloads all cogs on the bot. Can do git pull if used with \"t\"", "`.reload` | `.rebuild` | `.reload t` | `.rebuild t`"),
             ("⬇️ load", "Activates and load a single cog.", "`.load <cog name>` | `.activate <cog name>`" ),
             ("⬆️ unload", "Deactivates and unloads a single cog." , "`.unload <cog name>` | `.deactivate <cog name>`"),
+            ("ℹ read", "Reads the entire cog file and sends the cogs." , "`.read` | `.readcogs`"),
             ]
 
         print("[AdminCog.adminHelpCommand] Sending embed\n")
         await helpFunction.generateHelpEmbed(ctx, cogName, cogDescription, helpList, cogEmbed)
         return
-
 
 # Setup function for the cog
 def setup(bot):

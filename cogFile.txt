@@ -9,12 +9,13 @@
 #                                                                                              #
 # Commented cog_example here because we dont use it, its just a template for new cogs (:       #
 #                                                                                              #
-# On this file, any line on this file that starts with '#' will be ignored                     #
-# If you add comments here, please, respect this template so you dont break our readers!       #
-# Dont leave empty lines here too! It will break our readers sadly. Use # instead to space     #
+# On this file, any line that starts with '#' will be ignored                                  #
+# If you want to add comments here, please, respect this template so you dont break our        #
+# readers!                                                                                     #
+# Dont leave empty lines here too! It will break our readers sadly. Use # instead to space:    #
 #                                                                                              #
-# Failing to do so will probably mess up the cog loading/reloading/unloading functions ):      #
+# Failing to do so will mess up the cog loading/reloading/unloading functions ):               #
 ################################################################################################
 #
-# ! cog_example
+# cog_example
 admin
